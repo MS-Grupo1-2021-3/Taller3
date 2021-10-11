@@ -11,7 +11,5 @@ ADD ssh-config .
 USER root
 ADD start.sh .
 
-RUN chown jenkins:jenkins /deploy
-
 USER jenkins
 ENTRYPOINT [ "/start.sh" ]
