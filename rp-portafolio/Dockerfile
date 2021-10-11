@@ -1,6 +1,6 @@
 FROM python
 
-RUN pip install -r Django
+RUN pip install Django
 WORKDIR /app
 ADD startup.sh .
 
