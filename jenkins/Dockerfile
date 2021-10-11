@@ -2,7 +2,7 @@ FROM jenkins/jenkins:lts-jdk11
 
 ENV JENKINS_USER=admin
 ENV JENKINS_PASS=admin
-ENV JAVA_OPTS=-Djenkins.install.runSetupWizard_false 
+ENV JAVA_OPTS=-Djenkins.install.runSetupWizard=false 
 
 ADD plugins.txt .
 RUN jenkins-plugin-cli -f plugins.txt
