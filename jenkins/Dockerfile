@@ -11,6 +11,7 @@ ADD ssh-config .
 USER root
 ADD start.sh .
 
+RUN mkdir /deploy
 RUN chown jenkins:jenkins /deploy
 
 USER jenkins
