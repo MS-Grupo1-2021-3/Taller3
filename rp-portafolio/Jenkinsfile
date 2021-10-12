@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage('clone') {
+            steps {
+                sh 'git clone https://github.com/MS-Grupo1-2021-3/Taller3'
+            }
+        }
+        stage('lint') {
+            steps {
+                sh 'python3 -m pylint --output-format=parseable --fail-under=0 Taller3/rp-portafolio --msg-template="{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}" | tee pylint.log || echo "pylint exited with $?"'
+            }
+        }
+    }
+}
